@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  db:
+    container_name: maria-db-1
+    image: mariadb:10.7
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+    ports:
+      - 3307:3306
+
+  adminer:
+    container_name: adminer-1
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
